@@ -8,7 +8,7 @@ tasks:
   - id: "vidas_vigentes_playwright"
     collector: "playwright"
     request:
-      source: "https://patrezeseguros.metainfo.com.br/Relatorio/powerbi/relatorio.aspx?reportId=34f1a50c-f7e3-43f7-950e-200d3f6bc7db&groupId=41517090-2932-411f-81e9-c96e7bc27e0b"
+      source: "https://******************************************"
       method: "GET"
       extra:
         login_url: "https://**************************"
