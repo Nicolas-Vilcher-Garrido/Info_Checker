@@ -11,9 +11,9 @@ tasks:
       source: "https://patrezeseguros.metainfo.com.br/Relatorio/powerbi/relatorio.aspx?reportId=34f1a50c-f7e3-43f7-950e-200d3f6bc7db&groupId=41517090-2932-411f-81e9-c96e7bc27e0b"
       method: "GET"
       extra:
-        login_url: "https://patrezeseguros.metainfo.com.br/login"
-        username: "nicolas.vilcher"
-        password: "Nicolas@Meta25"
+        login_url: "https://**************************"
+        username: "*********************"
+        password: "*********************"
 
         # Não usar returnUrl por enquanto
         use_return_url: false
