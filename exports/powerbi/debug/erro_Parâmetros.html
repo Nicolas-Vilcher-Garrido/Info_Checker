@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <script src="../funcoes.js" type="text/javascript"></script>
+    <link href="../../css/estilos.css" rel="stylesheet" type="text/css"><link href="../../Util/css/estilomenu.css" rel="stylesheet" type="text/css"><link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="styles/font-awesome.css"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>
+	Relatório Power BI
+</title>
+    <!--<script src="../../Scripts/powerbi.js"></script>
+    <script src="../../Scripts/powerbi.min.js"></script>-->
+	<script src="https://cdn.jsdelivr.net/npm/powerbi-client@latest/dist/powerbi.min.js"></script>
+</head>
+<body>
+    <form method="post" action="./relatorio.aspx?reportId=34f1a50c-f7e3-43f7-950e-200d3f6bc7db&amp;groupId=41517090-2932-411f-81e9-c96e7bc27e0b" id="form2">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" style="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" style="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTY3OTcwNzc2NQ8WBh4KRW1iZWRUb2tlbgX1DUg0c0lBQUFBQUFBRUFCM1N4NjZyVmdCQTBYLTVVeUxSaXlPOUFYQUFBOGIwT3FPWjZrT3ZVZjQ5VjVudjBkTC01OGRLcjM1SWk1LV9mMFNkbmVTZ3FhSzl2NFJUcUhpTVNvbVNTdXFqcmg5ZFREU0d1b1dveHU1di00cVo3N2xpam5uanFDRm9nRFI2VGQwbURjVURmOWVZU0psR0wtaU51QXJWYk53N2E5MXRfNmx4dWtkVW80OGhsNmJMdk5hX1ZOUkVhWFc3ZFpnQk9jRXZzUlZTZnZBaV92VlJvc2NKbDB1OXlhNDl2eXRmVGJXT1ZsbDBub0NMSlVTMEsxSzRiSDVxemw3TUJzLTdaUTB4RWVrcTZpWk83WWJqSzhPX0JJcURuR0R4UFBsYTV4cXNhcUh0QmhNYnhnUWZsS2w2NzU3N3FuNXd0UUo0YlMxNXltWkhiZGhaUzhmZG1pT1BVd2llZGxhVHNBTHFNQkdmU04tb2l2TEtSN0UweDNzX2N4OGFuQkNFVC1rUVNzbENMNHBRdk5ocDFSRnpSSUE1WF95RkZjdkNSWUNrcG85a2NVTVMyaDJyS0xBTEZNSUUxb1NDdEtuWHktMzRuU2RUYmphbW5PVkYtbVU2LTR1M3VXQ3FXRmVkY3lmM0xjZHhwV0ppYjNoV1dKUWJrbkdJSTgtYTFPUDRURzRzMzlHd1VZLUl2VC0zLS1HejhJSDJJQUIwRmxxZmNpRzdMcmNtcjhtaXpjOGRlQVJ2c2lqMGJNSUdtZTBUV2pnSjRxakZwZG1PcHpxYnBnZEZyRHlFb1dMY3Nadkg0enhjZm9WVGRjaGxzeGpiOWNpbDZNZzZKeG1CM1VCRHlTRDFhYTMzcWlpN0dGai1xRFBmM0s0TEZUeFNsbFAzZWtWQlpDX1BwZ0ZxOXJBSXdaVzVoZGMyRlEyMW9KNnJEMFNFa1hJZ2lNM2xHSmxlTFFZNG1MN29PZFRiWlg5Vm5rblNnNllHQ0pLdnZrZG1vNFZ1YWd0Tm5kV1Q5T1FKNEtrSXZJMDAwcGJGUE5SQjJ5bFpXOWlsSnFxUUR6cU80bndMLUZFaU9ESkEwMkEwX3Z6ODlTUE8xN2dPZW5uOXJxOXZqUWFzZk5INjg4czVISWxwbDBLaGpPbW9nVDR3VHpyYll0b3FrdUhvYmNwUDcweG96dG1JaUhZTE9lVVJTYldOMnNFdzZ6eWpleWQydml1aTdHM0w0LUFKc3VNb3NwblpEMW1sM3BkRzA5UWtpQ29GWGl3djdlTUhxUEhNWm1kU28teHc4TmlDaTFwRERKVkhRamNFN1kzMkJkLUlfU2dwYzVXU2pqOC1hbGMzWmlQcmJPUnQ4NGtOWGdlandMZDVJWWRUZkpqb0xrUDNudUZURlVtcU9Fb2xmMUZkVVRiZWwtSWR2VElRRWI2TlBMRDRzQ3k1dHdCdnJnXzZZSVhYMXBpYUdXdnh1NjlhNXFvQ1NRVUVQdGNqa0hTYnVpamkxR0ZoOUxlOGNVX3lfWkVXTTZFbjBTckdZX1BiQUxQY3BWQTZUV3pyeHNiVklUVHNITi05NDhfX3pOZFlsN01hX0Nxelk2R0ZHLWVUeXd1LTVES2I0MFkycV84cnQ2bGd1bTV6LVp2SmpHa05Xb1pZNVdJYjFpdEdkZjhiWTVUdkoybm02RGc5NmN0N2lZMnVDZEpOX05hVFZ0akhBV1hGaFRaZWg1MFNDOHUzM3Q5RGJtTlByUDBnb0dLQTktakUtSUxHLUFUc2NSX2FWSVotRjIxN2E5SHpvNXJJVGVFcEVYaThNN1BFblRjc205TnhtdlM2MWI5MGVEdzNYdzM5aDN1ZEc1azlVeG43VnVkOWdBUHR0SGhYRTl1Smh0QXFCem9scDQwVXNPZlplRFQwYnRqaHpOY21MeExadTQ4NzJ5QTl3UjJLNDllUlF1bWllbXc4VzBtUERYRVh6bFVPeGNob09Md0tUMjBSMXc4eXVFUDBDa2wyNmUzTW9XbVNVTWtPeFhGZlhGZHNzWFRCLWRRb3JNTE92bEhGNFBCYkdNY0s5ZG9HVVhFdGNOc2NSTUo2NjNUalM5N1RtX2xmNW5fX0EtdkdHZHJ1QlFBQS5leUpqYkhWemRHVnlWWEpzSWpvaWFIUjBjSE02THk5WFFVSkpMVUpTUVZwSlRDMVRUMVZVU0MxQ0xWQlNTVTFCVWxrdGNtVmthWEpsWTNRdVlXNWhiSGx6YVhNdWQybHVaRzkzY3k1dVpYUWlMQ0psZUhBaU9qRTNOVFU0T0RjNU5qVXNJbUZzYkc5M1FXTmpaWE56VDNabGNsQjFZbXhwWTBsdWRHVnlibVYwSWpwMGNuVmxmUT09HghSZXBvcnRJZAUkMzRmMWE1MGMtZjdlMy00M2Y3LTk1MGUtMjAwZDNmNmJjN2RiHghFbWJlZFVybAV+aHR0cHM6Ly9hcHAucG93ZXJiaS5jb20vcmVwb3J0RW1iZWQ/cmVwb3J0SWQ9MzRmMWE1MGMtZjdlMy00M2Y3LTk1MGUtMjAwZDNmNmJjN2RiJmdyb3VwSWQ9NDE1MTcwOTAtMjkzMi00MTFmLTgxZTktYzk2ZTdiYzI3ZTBiZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAgUYdG9wbzEkTG9naW5TdGF0dXMxJGN0bDAxBRh0b3BvMSRMb2dpblN0YXR1czEkY3RsMDO9+sVpsyG66lJ+tHI1qjRsAzWX4B5InUTJ3Lifg0mz3A==" style="">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form2'];
+if (!theForm) {
+    theForm = document.form2;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8533A3BC" style="">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAICxBgKaqU7nlG2T9zFFaTbh1kUmQFxcsWT/a13Zrl+RatCdTmr23py0Izb7ot9bV7jJNezrL6bwJVX/zyxD1T4" style="">
+</div>
+        <!-- inicio topo -->
+        
+<div id="topo">
+    <div class="logo">
+        &nbsp;<img src="/images/logo.png" style="width: 230px; height: 74px"></div>
+    <div class="controles">
+        <div class="usuario">
+            
+            &gt;<br><br><br><br <a="" href="/default.aspx?language=pt" title="Português">
+                <img src="/Util/img/ico/flagBR.png" style="height: 14px; width: 19px">
+            <a href="/default.aspx?language=en" title="English version Beta">
+                <img src="/Util/img/ico/flagEN.png" style="height: 14px; width: 19px"></a>
+            Usuário:
+            <span id="topo1_LoginName1">nicolas.vilcher</span>
+            &nbsp;|
+            <a id="topo1_LoginStatus1" href="javascript:__doPostBack('topo1$LoginStatus1$ctl00','')">Logout</a>
+        </div>
+    </div>
+    <div class="faixa">
+    </div>
+</div>
+
+        <!-- fim topo -->
+        <!-- inicio navegacao -->
+        
+        <div class="faixa">
+        </div>
+        <!-- fim navegacao -->
+        <div class="" style="margin: 10px">
+                <div id="embedContainer" style="height: 800px; width: 100%;"><iframe src="https://app.powerbi.com/reportEmbed?reportId=34f1a50c-f7e3-43f7-950e-200d3f6bc7db&amp;groupId=41517090-2932-411f-81e9-c96e7bc27e0b&amp;uid=r69i8" scrolling="no" allowfullscreen="true" style="width: 100%; height: 100%;"></iframe></div>
+        </div>
+        <!-- fim conteudo -->
+        <div class="clear">
+        </div>
+        <!-- inicio rodape -->
+        <div id="rodape">
+            <div class="faixa">
+            </div>
+            SigSaúde © 2015 - Todos os Direitos Reservados
+    <br>
+            Metainfo Gerenciamento de Riscos em Saúde
+        </div>
+        <script>
+            let loadedResolve, reportLoaded = new Promise(res => { loadedResolve = res; });
+            let renderedResolve, reportRendered = new Promise(res => { renderedResolve = res; });
+
+            var models = window['powerbi-client'].models;
+
+            async function embedPowerBIReport() {
+                let accessToken = 'H4sIAAAAAAAEAB3Sx66rVgBA0X-5UyLRiyO9AXAAA8b0OqOZ6kOvUf49V5nv0dL-58dKr35Ii5-_f0SdneSgqaK9v4RTqHiMSomSSuqjrh9dTDSGuoWoxu5v-4qZ77lijnnjqCFogDR6Td0mDcUDf9eYSJlGL-iNuArVbNw7a91t_6lxukdUo48hl6bLvNa_VNREaXW7dZgBOcEvsRVSfvAi_vVRoscJl0u9ya49vytfTbWOVll0noCLJUS0K1K4bH5qzl7MBs-7ZQ0xEekq6iZO7YbjK8O_BIqDnGDxPPla5xqsaqHtBhMbxgQflKl67577qn5wtQJ4bS15ymZHbdhZS8fdmiOPUwiedlaTsALqMBGfSN-oivLKR7E0x3s_cx8anBCET-kQSslCL4pQvNhp1RFzRIA5X_yFFcvCRYCkpo9kcUMS2h2rKLALFMIE1oSCtKnXy-34nSdTbjamnOVF-mU6-4u3uWCqWFedcyf3LcdxpWJib3hWWJQbknGII8-a1OP4TG4s39GwUY-IvT-3--Gz8IH2IAB0FlqfciG7Lrcmr8mizc8deARvsij0bMIGme0TWjgJ4qjFpdmOpzqbpgdFrDyEoWLcsZvH4zxcfoVTdchlsxjb9cil6Mg6JxmB3UBDySD1aa33qii7GFj-qDPf3K4LFTxSllP3ekVBZC_PpgFq9rAIwZW5hdc2FQ21oJ6rD0SEkXIgiM3lGJleLQY4mL7oOdTbZX9VnknSg6YGCJKvvkdmo4VuagtNndWT9OQJ4KkIvI000pbFPNRB2ylZW9ilJqqQDzqO4nwL-FEiODJA02A0_vz89SPO17gOenn9rq9vjQasfNH688s5HIlpl0KhjOmogT4wTzrbYtoqkuHobcpP70xoztmIiHYLOeURSbWN2sEw6zyjeyd2viui7G3L4-AJsuMospnZD1ml3pdG09QkiCoFXiwv7eMHqPHMZmdSo-xw8NiCi1pDDJVHQjcE7Y32Bd-I_Sgpc5WSjj8-alc3ZiPrbORt84kNXgejwLd5IYdTfJjoLkP3nuFTFUmqOEolf1FdUTbel-IdvTIQEb6NPLD4sCy5twBvrg_6YIXX1piaGWvxu69a5qoCSQUEPtcjkHSbuiji1GFh9Le8cU_y_ZEWM6En0SrGY_PbALPcpVA6TWzrxsbVITTsHN-948__zNdYl7Ma_CqzY6GFG-eTywu-5DKb40Y2q_8rt6lgum5z-ZvJjGkNWoZY5WIb1itGdf8bY5TvJ2nm6Dg96ct7iY2uCdJN_NaTVtjHAWXFhTZeh50SC8u33t9DbmNPrP0goGKA9-jE-ILG-ATscR_aVIZ-F217a9Hzo5rITeEpEXi8M7PEnTcsm9NxmvS61b90eDw3Xw39h3udG5k9Uxn7Vud9gAPttHhXE9uJhtAqBzolp40UsOfZeDT0btjhzNcmLxLZu4872yA9wR2K49eRQumiemw8W0mPDXEXzlUOxchoOLwKT20R1w8yuEP0Ckl26e3MoWmSUMkOxXFfXFdssXTB-dQorMLOvlHF4PBbGMcK9doGUXEtcNscRMJ663TjS97Tm_lf5n__A-vGGdruBQAA.eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLUJSQVpJTC1TT1VUSC1CLVBSSU1BUlktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQiLCJleHAiOjE3NTU4ODc5NjUsImFsbG93QWNjZXNzT3ZlclB1YmxpY0ludGVybmV0Ijp0cnVlfQ==';
+                let embedUrl = 'https://app.powerbi.com/reportEmbed?reportId=34f1a50c-f7e3-43f7-950e-200d3f6bc7db&groupId=41517090-2932-411f-81e9-c96e7bc27e0b';
+                let reportId = '34f1a50c-f7e3-43f7-950e-200d3f6bc7db';
+
+                if (!accessToken || !embedUrl || !reportId) {
+                    console.error("Power BI Embed data is missing");
+                    return;
+                }
+
+				let config = {
+				type: 'report',
+				tokenType: models.TokenType.Embed,
+				accessToken: accessToken,
+				embedUrl: embedUrl,
+				id: reportId,
+				permissions: models.Permissions.All,
+				settings: {
+					panes: {
+						filters: { visible: true }, // Exibe o painel de filtros
+						pageNavigation: { visible: true } // Exibe o menu de navegação entre páginas
+					},
+					statusBar: { visible: true } // Exibe a barra de status
+				}
+				//,navigationPosition: models.NavigationPosition.Left // Define o menu lateral esquerdo
+			};
+
+                var embedContainer = document.getElementById('embedContainer');
+                var report = powerbi.embed(embedContainer, config);
+
+                report.off("loaded");
+                report.on("loaded", function () {
+                    loadedResolve();
+                    report.off("loaded");
+                });
+
+                report.off("error");
+                report.on("error", function (event) {
+                    console.log(event.detail);
+                });
+
+                report.off("rendered");
+                report.on("rendered", function () {
+                    renderedResolve();
+                    report.off("rendered");
+                });
+            }
+
+            async function initialize() {
+                await embedPowerBIReport();
+                await reportLoaded;
+                await reportRendered;
+            }
+
+            window.onload = initialize;
+        </script>
+
+    </form>
+
+
+
+
+</body></html>

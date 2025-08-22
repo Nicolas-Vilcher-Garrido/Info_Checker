@@ -1,0 +1,33 @@
+collectors:
+  http:
+    timeout: 25
+  playwright:
+    headless: false   # deixe false para ver o fluxo; depois pode voltar para true
+
+tasks:
+  - id: "vidas_vigentes_playwright"
+    collector: "playwright"
+    request:
+      source: "https://patrezeseguros.metainfo.com.br/Relatorio/powerbi/relatorio.aspx?reportId=34f1a50c-f7e3-43f7-950e-200d3f6bc7db&groupId=41517090-2932-411f-81e9-c96e7bc27e0b"
+      method: "GET"
+      extra:
+        login_url: "https://patrezeseguros.metainfo.com.br/login"
+        username: "nicolas.vilcher"
+        password: "Nicolas@Meta25"
+
+        # Não usar returnUrl por enquanto
+        use_return_url: false
+
+        # PBi faz polling; 'domcontentloaded' é mais seguro que 'networkidle'
+        wait_until: "domcontentloaded"
+        wait_ms: 6000
+        nav_timeout_ms: 60000
+
+        # Abas (se quiser tentar clicar por nome). Deixe vazio para extrair a página atual:
+        tabs_to_extract:
+          - "Performance"         # ajuste conforme rótulo real das abas
+          - "Parâmetros"
+
+        # Geração de Excel a partir dos CSVs
+        merge_to_excel: true
+        excel_name: "powerbi_export.xlsx"
