@@ -8,12 +8,12 @@ tasks:
   - id: "vidas_vigentes_playwright"
     collector: "playwright"
     request:
-      source: "https://******************************************"
+      source: "https://URL QUE DESEJA ACESSAR"
       method: "GET"
       extra:
-        login_url: "https://**************************"
-        username: "*********************"
-        password: "*********************"
+        login_url: "https://URL QUE DESEJA ACESSAR"
+        username: "LOGIN"
+        password: "SENHA"
 
         # Não usar returnUrl por enquanto
         use_return_url: false
